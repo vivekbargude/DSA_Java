@@ -1,0 +1,94 @@
+package LinkedList;
+
+class Node{
+    int data;
+    Node next;
+
+    Node(int data){
+    this.data = data;
+    this.next = null;
+    }
+
+    Node(int data , Node next){
+        this.data = data;
+        this.next = next;
+    }
+}
+
+class Link_list{
+    public static void main(String[] args) {
+        Node head = new Node(10);
+        head = insertNodeAtEnd(10, head);
+        printLL(head);
+        
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    static Node insertNodeAtEnd(int data, Node head){
+
+        Node newNode = new Node(data);
+
+        //Empty LinkedList
+        if(head==null)
+        {
+        head=newNode;
+        return head;
+        }
+
+        //Already nodes are present 
+        Node curr = head;
+        while(curr.next!=null)
+        {
+        curr = curr.next;
+        }
+        curr.next = newNode;
+        return head;
+    }
+    
+    static void printLL(Node head){
+        
+        //if linkedlist is empty
+        if(head==null)
+        {
+            System.out.println("LinkedList is Empty");
+            return;
+        }
+
+        //if already nodes are present
+        Node curr = head;
+        while(curr.next!=null)
+        {
+            System.out.print(curr.data+"->");
+            curr = curr.next;
+        }
+        System.out.print(curr.data+"->null");
+    }
+
+    static void insertNodeAtStart(int data,Node head){
+
+        Node newNode = new Node(data);
+
+        //If linkedlist is empty
+        if(head==null)
+        {
+            head=newNode;
+            return;
+        }
+
+        //if already nodes are present
+        newNode.next = head;
+        head = newNode;
+    }
+}
+
