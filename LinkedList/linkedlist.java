@@ -6,6 +6,10 @@
 // 5.Print the prime nodes
 // 6.Delete frequency of elements
 // 7.Reverse a linkedlist
+// 8.Delete a node without giving head;
+// 9.Find the Middle Node 
+// 10.Palindrome LinkedList 
+
 
 class Node {
     int data;
@@ -236,6 +240,45 @@ class Linkedlist {
         }
     
         return prev;  // New head
+    }
+
+    public Node middleNode(Node head) {
+        if(head==null || head.next == null)
+        return head;
+
+        Node slow = head;
+        Node fast = head;
+
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+        public void deleteNode(Node node) {
+        node.data = node.next.data;
+        node.next = node.next.next;
+    }
+
+    public boolean isPalindrome(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node rev = reverseLL(slow.next); // reverse second list
+        slow.next = null;
+        while(rev != null) {
+            if(head.data != rev.data) {
+                return false;
+            }
+            head = head.next;
+            rev = rev.next;
+        }
+        return true;
     }
     
     
