@@ -9,12 +9,16 @@
 // 8.Delete a node without giving head;
 // 9.Find the Middle Node 
 // 10.Palindrome LinkedList 
+// 11.Delete Nodes From Linked List Present in Array
+// 12.Delete the Middle Node of a Linked List
 
+import java.util.HashSet;
+import java.util.Set;
 
 class Node {
     int data;
     Node next;
-    Node sub;
+    Node sub;  //For nested sublist
 
     Node(int data) {
         this.data = data;
@@ -26,14 +30,16 @@ class Node {
 class Linkedlist {
 
     public static void main(String[] args) {
-        Node head = new Node(1);
+        Node head = new Node(3);
+        head = insertNode(head, 3);
         head = insertNode(head, 2);
-        head = insertNode(head, 4);
-        head = insertNode(head, 5);
-        head = insertNode(head, 6);
-        head = insertNode(head, 7);
-        head = insertNode(head, 8);
-        head = insertNode(head, 9);
+        head = insertNode(head, 1);
+        head = insertNode(head, 1);
+        printLL(head);
+        head = deleteDuplicates(head);
+        // head = insertNode(head, 7);
+        // head = insertNode(head, 8);
+        // head = insertNode(head, 9);
 
 
       // System.out.println("Length of Linked List: " + getLength(head));
@@ -43,12 +49,12 @@ class Linkedlist {
        // head = insertSublist(head, 1); 
 
        // System.out.println("Final Linked List:");
-        displayLL(head);
+        printLL(head);
 
         //printPrime(head);
         // head = deleteNumberFreq(head, 3, 2);
-        head = reverseLL(head);
-        displayLL(head);
+        // head = reverseLL(head);
+        // displayLL(head);
 
     }
 
@@ -56,6 +62,20 @@ class Linkedlist {
         Node newNode = new Node(data);
         newNode.next = head;
         return newNode;
+    }
+
+    public static void printLL(Node head){
+        if(head==null){
+            System.out.println("Empty LinkedList.");
+            return;
+        }
+
+        Node mover = head;
+        while(mover!=null){
+            System.out.print(mover.data+"->");
+            mover=mover.next;
+        }
+        System.out.print("null");
     }
 
     public static void displayLL(Node head) {
@@ -280,6 +300,95 @@ class Linkedlist {
         }
         return true;
     }
+
+    public static Node deleteDuplicates(Node head) {
+        if(head==null || head.next==null)
+        return head;
+
+        if(head.next.next==null){
+            if(head.data == head.next.data)
+            {
+            head.next=head.next.next;
+            head.next.next=null;
+            return head;
+            }
+            else 
+            return head;
+        }
+
+        Node mover = head;
+        while(mover!=null && mover.next!=null){
+                if(mover.data == mover.next.data && mover.data == mover.next.next.data){
+                System.out.println("mover"+mover.data);
+                mover.next=mover.next.next.next;
+                mover.next.next.next=null;
+            }else{      
+                System.out.println("mover"+mover.data);
+                mover.next=mover.next.next;
+                mover.next.next=null;
+            
+            }
+            mover=mover.next;
+        }
+
+        return head;
+
+    }
+
+    public Node modifiedList(int[] nums, Node head) {
+        int n = nums.length;
+        Set<Integer> set = new HashSet<>();
+        for(int num : nums)
+        set.add(num);
+
+        if(head==null)
+        return head;
+
+        while(head!=null && set.contains(head.data))
+        head=head.next;
+
+        if(head == null || head.next == null )
+        return head;
+
+        Node prev = head;
+        Node curr = head.next;
+
+        while(curr!=null){
+            while(curr!=null&&set.contains(curr.data)){
+                prev.next=curr.next;
+                curr=curr.next;
+            }
+
+            if(curr!=null)
+            curr=curr.next;
+
+
+            prev=prev.next;
+        }
+
+        return head;
+    }
     
+        public Node deleteMiddle(Node head) {
+        if(head==null)
+        return head;
+
+        if(head.next==null)
+        return null;
+
+        Node slow = head;
+        Node fast = head;
+        Node prev = null;
+
+        while(fast!=null && fast.next!=null){
+            prev=slow;
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+
+        prev.next=slow.next;
+
+        return head;
+    }
     
 }
