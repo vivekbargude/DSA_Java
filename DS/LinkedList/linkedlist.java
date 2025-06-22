@@ -12,7 +12,7 @@ package DS.LinkedList;
 // 10.Palindrome LinkedList 
 // 11.Delete Nodes From Linked List Present in Array
 // 12.Delete the Middle Node of a Linked List
-// 13.Odd Even Nodes
+// 13.Insert Node in sorted Linked List
 
 import java.util.HashSet;
 import java.util.Set;
@@ -32,13 +32,14 @@ class Node {
 class Linkedlist {
 
     public static void main(String[] args) {
-        Node head = new Node(3);
+        Node head = new Node(5);
         head = insertNode(head, 3);
         head = insertNode(head, 2);
         head = insertNode(head, 1);
-        head = insertNode(head, 1);
+        head = insertNodeSorted(head, 6);
+        
         printLL(head);
-        head = deleteDuplicates(head);
+       // head = deleteDuplicates(head);
         // head = insertNode(head, 7);
         // head = insertNode(head, 8);
         // head = insertNode(head, 9);
@@ -51,7 +52,7 @@ class Linkedlist {
        // head = insertSublist(head, 1); 
 
        // System.out.println("Final Linked List:");
-        printLL(head);
+      //  printLL(head);
 
         //printPrime(head);
         // head = deleteNumberFreq(head, 3, 2);
@@ -64,6 +65,31 @@ class Linkedlist {
         Node newNode = new Node(data);
         newNode.next = head;
         return newNode;
+    }
+
+    public static Node insertNodeSorted(Node head,int data){
+        if(head==null)
+        return head;
+        Node newNode = new Node(data);
+
+        Node mover=head;
+        while(mover.next!=null){
+            if(mover==head && data<mover.data){
+                newNode.next=head;
+                return newNode;
+            }
+            if(mover.data<=data && data<=mover.next.data){
+                newNode.next=mover.next;
+                mover.next=newNode;
+                return head;
+            }
+
+            mover=mover.next;
+        }
+        mover.next=newNode;
+        
+        return head;
+
     }
 
     public static void printLL(Node head){
