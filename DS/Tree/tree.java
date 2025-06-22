@@ -1,4 +1,4 @@
-package Tree;
+package DS.Tree;
 
 class Node{
     int data;

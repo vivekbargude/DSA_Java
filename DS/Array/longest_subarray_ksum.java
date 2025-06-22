@@ -1,3 +1,4 @@
+package DS.Array;
 
 class Main{
     public static void main(String[] args) {

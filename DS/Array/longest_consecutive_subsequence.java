@@ -1,3 +1,4 @@
+package DS.Array;
 // Approaches : 
 // Brute Force : Take each element and perform linear search in array for next consecutive sequence TC-> N*N SC-> constant
 
