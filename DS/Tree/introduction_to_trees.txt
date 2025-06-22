@@ -1,0 +1,31 @@
+🌳 Introduction to Trees
+A Tree is a widely used abstract data structure that represents hierarchical relationships. Unlike linear data structures (such as arrays and linked lists), trees are non-linear and consist of nodes connected by edges, forming a parent-child relationship.
+
+Trees are especially useful in applications such as:
+
+File systems
+
+Databases (e.g., B-Trees, Indexing)
+
+Routing algorithms
+
+Expression parsing in compilers
+
+Artificial intelligence (e.g., decision trees)
+
+📘 Basic Terms in Tree
+Understanding the following terms is key to working with trees:
+
+Term	Description
+Node	A fundamental part of a tree containing a value or data.
+Root	The topmost node in a tree (has no parent).
+Child	A node directly connected to another node when moving away from the root.
+Parent	A node that has one or more children.
+Leaf	A node that has no children.
+Edge	A connection between one node and another.
+Subtree	A tree formed by a node and its descendants.
+Depth	The number of edges from the root to a node.
+Height	The number of edges on the longest downward path from a node to a leaf.
+Level	The position of a node in terms of generations starting from the root.
+Degree	The number of children a node has.
+Binary Tree	A tree where each node has at most two children.

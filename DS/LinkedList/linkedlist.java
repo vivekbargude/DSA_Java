@@ -1,3 +1,4 @@
+package DS.LinkedList;
 // Function : 
 // 1.Insert Node at start
 // 2.Insert a sublist at particular index

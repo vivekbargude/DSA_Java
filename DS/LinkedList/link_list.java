@@ -1,4 +1,4 @@
-
+package DS.LinkedList;
 class Node{
     int data;
     Node next;
