@@ -1,8 +1,12 @@
 package DS.DP;
-
 import java.util.Arrays;
 
-class Memoization {
+//Functions :
+// 1.Fibonacci (Memoization)
+// 2.Factorial (Memoization)
+// 3.Sum of N numbers (Memoization)
+
+class memoization {
     public static void main(String[] args) {
         int n=4;
         int[] dp = new int[n+1];

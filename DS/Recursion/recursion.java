@@ -6,12 +6,7 @@ import java.util.Arrays;
 //1.Fibonacci (Recursion)
 //2.Factorial (Recursion)
 //3.Sum of N numbers (Recursion)
-//4.Fibonacci (Memoization)
-//5.Factorial (Memoization)
-//6.Sum of N numbers (Memoization)
-//7.Fibonacci (Tabulation)
-//8.Factorial (Tabulation)
-//9.Sum of N numbers (Tabulation)
+
 
 class Recursion{
     public static void main(String[] args){

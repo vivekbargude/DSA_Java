@@ -1,6 +1,13 @@
 package DS.DP;
 
-class Tabulation {
+
+
+//Functions:
+// 1.Fibonacci (Tabulation)
+// 2.Factorial (Tabulation)
+// 3.Sum of N numbers (Tabulation)
+
+class tabulation {
     public static void main(String[] args) {
         System.out.println(fibonacci_tab(4));
         System.out.println(factorial_tab(4));
