@@ -15,7 +15,7 @@ package DS.Array;
 // Output: 1
 // Explanation: The subarray [1] has the largest sum 1.
 
-class Main {
+class pqr {
     public static void main(String[] args) {
         int[] arr = {-2,-3,4,-1,-2,1,5,-3};
         int sum = maxSubArray(arr);

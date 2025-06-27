@@ -59,7 +59,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class Main{
+class mno{
     public static void main(String[] args) {
         int arr[] = {0,3,7,2,5,8,4,6,0,1};
         int length = longest_consecutive_subsequence(arr);

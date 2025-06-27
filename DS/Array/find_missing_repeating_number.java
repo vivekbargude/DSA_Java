@@ -2,7 +2,7 @@ package DS.Array;
 
 import java.util.HashMap;
 
-class Main {
+class abc {
     public static void main(String[] args) {
         int[] arr = {3,5,4,1,1};
         int[] ans = findMissingRepeatingNumbers(arr);
