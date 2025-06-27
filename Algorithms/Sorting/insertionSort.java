@@ -1,4 +1,4 @@
-package DS.Array.Sorting;
+package Algorithms.Sorting;
 
 class InsertionSort {
     public static void main(String[] args) {
