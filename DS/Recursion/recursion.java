@@ -12,6 +12,8 @@ import java.util.Arrays;
 //5.Print N-1
 //6.Print 1-N(Backtrack)
 //7.Print N-1(Backtrack)
+//8.Reverse Array(Two pointer and single)
+//9.Check for string palindrome
 
 class Recursion{
     public static void main(String[] args){
@@ -28,6 +30,12 @@ class Recursion{
 
         fact_Parameterised(4,1);
 
+        int[] arr ={1,2,3,4,5};
+        reverseSingleVariable(0, 5, arr);
+        for(int i=0;i<5;i++)
+        System.out.println(arr[i]);
+
+        System.out.println(isPalindromeString(0, "vivek"));
         
     }
     public static int fibonacci(int num){
@@ -110,6 +118,42 @@ class Recursion{
 
         printNto1_backtrack(i+1, n);
         System.out.println(i);
+    }
+
+    public static void reverseTheArray(int low,int high,int[] arr){
+        if(low>high)
+        return;
+
+        int temp = arr[low];
+        arr[low] = arr[high];
+        arr[high] = temp;
+
+        reverseTheArray(low+1, high-1, arr);
+    }
+
+    public static void reverseSingleVariable(int i,int n,int[] arr){
+        if(i>=n/2)
+        return;
+
+        swap(i, n-i-1, arr);
+        reverseSingleVariable(i+1, n, arr);
+
+        
+    }
+
+    public static void swap(int low,int high,int[] arr){
+        int temp=arr[low];
+        arr[low]=arr[high];
+        arr[high]=temp;
+    } 
+
+    public static boolean isPalindromeString(int i,String s){
+        if(i>=s.length()/2)
+        return true;
+
+        if(s.charAt(i)!=s.charAt(s.length()-i-1))
+          return false;
+        return isPalindromeString(i+1, s);
     }
 
     
