@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 //Functions :
 //1.Fibonacci (Recursion)
-//2.Factorial (Recursion)
+//2.Factorial (functional)
+//2.Factorial (parameterised)
 //3.Sum of N numbers (functional)
 //3.Sum of N numbers (parameterised)
 //4.Print 1-N
@@ -25,6 +26,7 @@ class Recursion{
         // printNto1_backtrack(1, 3);
         // sumOfN_Parameterised(4,0);
 
+        fact_Parameterised(4,1);
 
         
     }
@@ -40,6 +42,15 @@ class Recursion{
         return 1;
 
         return n*factorial(n-1);
+    }
+
+    public static void fact_Parameterised(int i,int fact){
+        if(i<1){
+            System.out.println(fact);
+            return;
+        }
+
+        fact_Parameterised(i-1, fact*i);
     }
 
     public static int sumOfN(int n){
