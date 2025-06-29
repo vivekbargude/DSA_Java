@@ -17,20 +17,20 @@ class Random{
     
          int n = grades.size();
     
-    for(int i=0;i<n;i++){
-        int grade = grades.get(i);
-        if(grade>=38){
-        int nextMultiple = grade-grade%5+5;
-        if(nextMultiple-grade<3){
-            ans.add(nextMultiple);
-        }else{
-            ans.add(grade);
-        }
-        }
-        else{
-            ans.add(grade);
-        }
-    }
+        for(int i=0;i<n;i++){
+            int grade = grades.get(i);
+            if(grade>=38){
+            int nextMultiple = grade-grade%5+5;
+            if(nextMultiple-grade<3){
+                ans.add(nextMultiple);
+            }else{
+                ans.add(grade);
+            }
+            }
+            else{
+                ans.add(grade);
+            }
+             }
     
     return ans;
 
