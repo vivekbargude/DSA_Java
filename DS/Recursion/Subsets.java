@@ -3,7 +3,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Subsets {
-    public List<List<Integer>> subsets(int[] nums) {
+    
+    public static void main(String[] args) {
+        int[] arr = {1,2,2};
+        List<List<Integer>> ans = new ArrayList<>();
+
+        ans = subsets(arr);
+
+        for(List<Integer> list : ans){
+            for(int num : list){
+                System.out.print(num + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static List<List<Integer>> subsets(int[] nums) {
         int n = nums.length;
         List<Integer> ans = new ArrayList<>();
         List<List<Integer>> subs = new ArrayList<>();
