@@ -2,7 +2,7 @@ package DS.Recursion;
 
 public class SudukoSolver {
     public static void main(String[] args) {
-        //solve(null)
+        
     }
 
     public static boolean solve(char[][] board){
