@@ -9,7 +9,7 @@ public class Permutation {
         int n = arr.length;
         List<List<Integer>> ans = new ArrayList<>();
 
-        boolean[] freq = new boolean[n];
+        //boolean[] freq = new boolean[n];
 
         //generatePermutations(n, arr, new ArrayList<>(), ans, freq);
         generatePermutationsBySwapping(0, n, arr, ans);
