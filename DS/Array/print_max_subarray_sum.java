@@ -1,4 +1,3 @@
-package DS.Array;
 
 
 class atu {

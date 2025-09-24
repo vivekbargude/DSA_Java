@@ -1,4 +1,3 @@
-package DS.Array;
 
 // LC -> 53 / MEDIUM 
 

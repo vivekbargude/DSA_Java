@@ -1,4 +1,4 @@
-package DS.Array;
+
 
 // Segregate 0s and 1s in an array
 // Last Updated : 09 Jul, 2025
